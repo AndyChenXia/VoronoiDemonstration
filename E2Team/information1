@@ -1,0 +1,9 @@
+Information about the play modes:
+ 
+Continuous:
+This mode is for displaying the generation of the voronoi continuously,
+with a editable speed that can be set from the slider above (steps per second)
+larger the number from the slider faster the generation of the Voronois will be.
+
+Step by step:
+This mode allows the user to control the generation manually by clicking the button "Next step".

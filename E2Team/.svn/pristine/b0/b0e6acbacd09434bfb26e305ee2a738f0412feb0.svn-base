@@ -1,0 +1,12 @@
+Informacion sobre modo de reproduccion:
+
+Continuo:
+
+Este modo es para reproducir la generacion de voronoides de forma continua y automatica con una velocidad fija
+que es configurado por el cliente atraves de la barra de velocidad (paso por segundo), mayot el valor elegido mas 
+rapido la reproduccion sera.
+
+Paso por paso:
+
+Este modo permite al cliente controlar el flujo de la reproduccion de forma manual, atraves de clicks en el boton
+proximo paso.

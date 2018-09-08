@@ -1,0 +1,153 @@
+package gui;
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+
+/**
+ * language controller
+ * @author Michael
+ * @author Andy
+ */
+public class Language extends JComboBox<String> {
+
+	private static final long serialVersionUID = 1L;
+
+	private static String[] languages = { "English", "Español", "中文" };
+
+	private JButton start, exit;
+	private JLabel labelLanguage;
+	private String language = "english";
+	private JLabel labelsize;
+	private UserGuide guideLabel;
+	private FontController sizeControl;
+	private JButton free;
+	private ImageIcon guideImage;
+	private DefaultComboBoxModel<String> model;
+
+	protected Language() {
+		super(languages);
+		this.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (this.getSelectedIndex() == 0) {
+			this.start.setText("Tutorial");
+			this.start.setToolTipText("Click to enter the software.");
+			this.exit.setText("Exit");
+			this.exit.setToolTipText("Click to leave the software.");
+			this.labelLanguage.setText("Language:");
+			this.labelsize.setText("Font size: ");
+			this.setToolTipText("Select the language of the program.");
+			this.guideLabel.setToolTipText("Introduction for this software");
+			int selected = this.sizeControl.getSelectedIndex();
+			this.model = new DefaultComboBoxModel<String>(this.sizeControl.size);
+			this.sizeControl.setModel(model);
+			this.sizeControl.setToolTipText("Select Font size");
+			this.sizeControl.setSelectedIndex(selected);
+			this.free.setText("Play by yourself!");
+			this.free.setToolTipText("Put the dots as you want!");
+			guideImage = createImageIcon("/images/guide3.png", "user guide button");
+			this.guideLabel.setImage(guideImage);
+			language = "english";
+		}
+		if (this.getSelectedIndex() == 1) {
+
+			this.start.setText("Tutorial");
+			this.start.setToolTipText("Ejecutar al programa.");
+			this.exit.setText("Salir");
+			this.exit.setToolTipText("Salir del programa.");
+			this.labelLanguage.setText("Idioma:");
+			this.labelsize.setText("Tamaño del texto: ");
+			this.setToolTipText("Elegir idioma del programa.");
+			this.guideLabel.setToolTipText("Introduccion del programa");
+			int selected = this.sizeControl.getSelectedIndex();
+			this.model = new DefaultComboBoxModel<String>(this.sizeControl.size);
+			this.sizeControl.setModel(model);
+			this.sizeControl.setSelectedIndex(selected);
+			this.sizeControl.setToolTipText("Elegir tamaño de letra");
+			this.free.setText("Tu decides!");
+			this.free.setToolTipText("Pon los puntos en donde quieras!");
+			guideImage = createImageIcon("/images/guide3ES.png", "user guide button");
+			this.guideLabel.setImage(guideImage);
+			language = "spanish";
+		}
+		if (this.getSelectedIndex() == 2) {
+			this.start.setText("教程");
+			this.start.setToolTipText("点击开始软件.");
+			this.exit.setText("退出");
+			this.exit.setToolTipText("点击退出软件.");
+			this.labelLanguage.setText("语言: ");
+			this.labelsize.setText("文字大小: ");
+			this.setToolTipText("选择语言");
+			this.guideLabel.setToolTipText("软件介绍");
+			this.model = new DefaultComboBoxModel<String>(this.sizeControl.sizeCH);
+			int selected = this.sizeControl.getSelectedIndex();
+			this.sizeControl.setModel(model);
+			this.sizeControl.setToolTipText("选择字体大小");
+			this.sizeControl.setSelectedIndex(selected);
+			this.free.setText("随意分布点");
+			this.free.setToolTipText("你来选择点的位置");
+			guideImage = createImageIcon("/images/guide3CH.png", "user guide button");
+			this.guideLabel.setImage(guideImage);
+			language = "chinese";
+		}
+
+	}
+
+	/**
+	 * setting up the language for the parameters
+	 * @param start a button 
+	 * @param exit	a button
+	 * @param labelLanguage a label 
+	 * @param labelsize a label
+	 * @param guideLabel a label
+	 * @param sizeControl a combo box
+	 * @param free a label
+	 */
+	public void setWelcome(JButton start, JButton exit, JLabel labelLanguage, JLabel labelsize, UserGuide guideLabel, FontController sizeControl, JButton free) {
+		this.start = start;
+		this.exit = exit;
+		this.labelLanguage = labelLanguage;
+		this.labelsize = labelsize;
+		this.guideLabel = guideLabel;
+		this.sizeControl = sizeControl;
+		this.free = free;
+	}
+
+	/**
+	 * get the language
+	 * @return language
+	 */
+	public String getLanguage() {
+		return language;
+	}
+
+	/**
+	 * Creates an image icon from the specified path giving it the specified
+	 * description Source:
+	 * http://docs.oracle.com/javase/tutorial/uiswing/components/icon.html
+	 * 
+	 * @param path
+	 *            Image path
+	 * @param description
+	 *            Image description
+	 * @return Image icon made from the image
+	 */
+	protected ImageIcon createImageIcon(String path, String description) {
+		java.net.URL imgURL = getClass().getResource(path);
+		if (imgURL != null) {
+			return new ImageIcon(imgURL, description);
+		} else {
+			System.err.println("Couldn't find file: " + path);
+			return null;
+		}
+	}
+
+}

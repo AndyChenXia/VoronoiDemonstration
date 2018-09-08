@@ -1,0 +1,10 @@
+Information about the dot distribution: 
+
+Random:
+This will put the dots randomly on the canvas therefore the generated voronois will have completely random shapes 
+
+Square:
+This will put the dots in a way that the generated voronois will have square shapes.
+
+Hex: 
+This will put the dots in a way that the generated voronois will have hexagonal shapes.

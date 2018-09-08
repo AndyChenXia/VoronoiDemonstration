@@ -1,0 +1,45 @@
+**REVISION NEEDED**
+
+User Guide:
+
+1. What are Voronois?
+
+Named after Georgy Voronoi, a Voronoi diagram is a way of separating a plain into different areas according to a set of points. Each region contains one point and is defined such that the region contains the area of the plain which are closer to the contained point than any other point on the plain. In other words anywhere in a given region (Voronoi cell) is closer to the point in that cell than the point in any other cell
+
+(For more information: https://en.wikipedia.org/wiki/Voronoi_diagram)
+
+2. What is "Voronoi Generator".
+
+2.1 Aim:
+This software aims to teach how to generate Voronois, after using this program the user should be able to generate their own Voronois.
+
+2.2 Description:
+The program is divided in to 3 sections: Welcome Panel, Controller Panel and Display Panel.
+
+2.2.1 Welcome Panel
+This is the first part of the software that the users see. The users can choose to start as a tutorial or as a simple Voronoi generator where users choose where to put the dots, before starting the users can set the size of the font that 
+they wish. Furthermore, language can be chosen as well (English, Spanish and Chinese)selecting the one that they are most familiar with.
+
+2.2.2 Manual Frame
+If the user chooses to put the dots by himself/herself a resizable frame pops out showing the area that the canvas will fill, after setting the size of the canvas the user can start to put the dots but after starting the user is not allowed to resize the frame.
+In order to do so he/she will need to reset it.
+		
+2.2.3 Controller
+Here the user can configure how the generation of the Voronois should be done (Random, Hex and Square) and the way that they want it to be displayed.
+The user can select the way that the generation of the Voronois is done, 2 options are available:
+
+Continuous: Displaying the generation continuously (DOES NOT INCLUDE EXPLANATION).
+Step-by-step: Displaying the generation step by step, controlled by the user (DOES INCLUDE EXPLANATION).
+
+The user can also control the number of Voronois that should be generated through the "Number of nodes" slider.
+and the speed that these are generated with the "Steps per second" slider (ONLY IN CONTINUOUS MODE).
+All the configurations should be done here before starting the display.
+		
+2.2.4 Display Panel
+This panel is for displaying the generation and for teaching the users how the generation is done, here the user cannot resize the window
+or change the size of the font.
+
+3. Important tips
+
+1.The user cannot do any changes on the display panel once the algorithm starts, all that needs to be done before that.
+2.If the users has any doubts about something on the controller they can get help from the "Information" button.

@@ -1,0 +1,162 @@
+{
+  "continuous": {
+    "en": "Continuous",
+    "es": "Continuo",
+    "ch": "连续"
+  },
+  "step by step": {
+    "en": "Step by step",
+    "es": "Paso por paso",
+    "ch": "一步一步"
+  },
+  "moreinfo": {
+    "en": "Click for more information",
+    "es": "Click para mas informacion",
+    "ch": "点击跟多消息"
+  },
+  "playmode": {
+    "en": "Choose play mode: ",
+    "es": "Elegir modo de reproduccion",
+    "ch": "选择播放模式"
+  },
+  "random": {
+    "en": "Random",
+    "es": "Aleatorio",
+    "ch": "随机"
+  },
+  "hex": {
+    "en": "Hex",
+    "es": "Hex",
+    "ch": "六角"
+  },
+  "square": {
+    "en": "Square",
+    "es": "Cuadrado",
+    "ch": "四角"
+  },
+  "choosedistrib": {
+    "en": "Choose dot spread: ",
+    "es": "Elegir distribucion de puntos: ",
+    "ch": "选择点的分布: "
+  },
+  "numnodes": {
+    "en": "Number of nodes: ",
+    "es": "Numero de puntos: ",
+    "ch": "点的数量: "
+  },
+  "stepspersec": {
+    "en": "Steps per second: ",
+    "es": "Paso por segundo: ",
+    "ch": "速度: "
+  },
+  "playModeTemp":{
+   "en": "Play mode: ",
+   "es": "Modo de reproduccion: ",
+   "ch": "播放模式: "
+  },
+  "dotdistrib":{
+   "en": "Dot distribution: ",
+   "es": "Distribucion de puntos: ",
+   "ch": "点的分布: "
+  },
+  "info1":{
+   "en": "information1",
+   "es": "informationES1",
+   "ch": "informationCH1"
+  },
+  "info2":{
+   "en": "information2",
+   "es": "informationES2",
+   "ch": "informationCH2"
+  },
+   "info3":{
+   "en": "information3",
+   "es": "informationES3",
+   "ch": "informationCH3"
+  },
+  "playtips":{
+   "en": "Play the visualisation",
+   "es": "Reproducir visualizacion",
+   "ch": "播放"
+  },
+  "steptips":{
+   "en": "Move on to the next step",
+   "es": "Ir a sieguinte paso",
+   "ch": "下一步"
+  },
+   "pausetips":{
+   "en": "Pause the visualisation",
+   "es": "Pausar visualizacion",
+   "ch": "暂停"
+  },
+   "returntips":{
+   "en": "Return to the welcome page",
+   "es": "Volver a pagina de inicio",
+   "ch": "返回到初始界面"
+  },
+   "exittips":{
+   "en": "Exit the program",
+   "es": "Salir del programa",
+   "ch": "退出程序"
+  },
+   "resettips":{
+   "en": "Reset the visualisation",
+   "es": "Resetear visualizacion",
+   "ch": "重置"
+  },
+  "addingnodenum":{
+   "en": "Adding node number ",
+   "es": "Añadir punto ",
+   "ch": "添加点  "
+  },
+  "nodenum":{
+   "en": "Nodes: ",
+   "es": "Puntos: ",
+   "ch": "点:  "
+  },
+  "waitingstart":{
+   "en": "Waiting for start.",
+   "es": "Esperando para empezar.",
+   "ch": "等待用户开始。 "
+  },
+  "visualcomplete":{
+   "en":"The visualisation is now complete for your inputs. Above you can see the resulting Voronoi polygons.",
+   "es":"Visualizacion para valor introducido ha sido completada. Arriba puedes ver los voronoides generados.",
+   "ch": "已完成用户所输入的数值，在上方可以看见已经形成好的泰森多边形。 "
+  },
+  "visualcomplete2":{
+   "en":"From here you can reset, return to the home page or exit all using the controls below.",
+   "es":"Desde aqui puedes resetear,volver a pagina de inicio o salir del programa utilizando los botones de abajo.",
+   "ch": "用户可以使用下方的按钮来选择选择重置，返回初始界面或者离开本程序。 "
+  },
+   "continuousplaymode":{
+   "en": "Now running in continous play mode... click below to pause/reset.",
+   "es": "Ahora ejecutando en modo continuo... use botones de abajo para pausar/resetear.",
+   "ch": "连续模式中。。。使用下方的键来暂停/重置。 "
+  },
+  "manualstart":{
+   "en": "<html> <center> Before starting you can set size of the canvas, the gray area represents the size of the canvas.</center></html>",
+   "es": "<html> <center> Antes de empezar puedes cambiar el tamaño del panel, el area de color gris representa el tamaño que el panel tendra.</center></html>",
+   "ch": "<html> <center> 开始之前你可以调整版面的大小，灰色的面积代表版面的大小。</center></html> "
+  },
+  "manualstarted":{
+   "en": "<html> <center>Click anywhere on the canvas above to add a point or click the information button below for help.</center></html>",
+   "es": "<html> <center>Haz click en donde quieres poner el punto sobre el panel o puedes cliquear sobre el boton de information para mas ayudas.</center></html>",
+   "ch": "<html> <center> 点击版面来摆放点或者点击信息按钮获得跟多帮助。</center></html> "
+  },
+  "manualstartbutton":{
+   "en": "Click to put the dots manually.",
+   "es": "Click para poner puntos.",
+   "ch": "开始摆放点。"
+  },
+  "canvasgoeshere":{
+   "en": "Canvas",
+   "es": "Panel",
+   "ch": "版面"
+  },
+    "controls":{
+   "en": "Controls",
+   "es": "Controles",
+   "ch": "控制"
+  }
+}

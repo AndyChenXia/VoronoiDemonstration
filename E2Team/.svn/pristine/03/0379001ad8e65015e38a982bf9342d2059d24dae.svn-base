@@ -1,0 +1,266 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+/**
+ * Welcome page when the GUi is first opened
+ * 
+ * @author Michael
+ * @author Andy
+ *
+ */
+public class WelcomePanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	MainGUI gui;
+	Language language;
+	JPanel canvasPanel;
+	FontController sizeControl;
+	ManualFrame manual;
+	int fontSize;
+	String languageCode;
+	GridBagConstraints c;
+
+	WelcomePanel(MainGUI gui, int size, int lang) {
+		super();
+		sizeControl = new FontController(gui);
+		sizeControl.setBackground(new Color(255, 255, 230));
+		this.gui = gui;
+		canvasPanel = null;
+		this.language = new Language();
+		this.language.setBackground(new Color(255, 255, 230));
+		this.language.setToolTipText("Select the language of the program.");
+		this.setOpaque(false);
+		try {
+			this.setUpWelcomePage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		switch (size) {
+		case 0:
+			fontSize = 12;
+		case 1:
+			fontSize = 15;
+		case 2:
+			fontSize = 17;
+		default:
+			fontSize = 12;
+		}
+
+		sizeControl.setSelectedIndex(size);
+		this.language.setSelectedIndex(lang);
+
+	}
+
+	/**
+	 * Create the welcome page for the Voronoi visualisation
+	 * 
+	 * @throws IOException
+	 */
+	public void setUpWelcomePage() throws IOException {
+		this.setFont(new Font("STSong", Font.PLAIN, fontSize));
+
+		this.setBorder(new EmptyBorder(10, 10, 10, 10));
+		GridBagConstraints c = new GridBagConstraints();
+		this.setLayout(new GridBagLayout());
+
+		// Create a 3x3 JPanel array to store everything we want on the welcome
+		// page
+		/*
+		 * JPanel[][] panelHolder = new JPanel[3][3]; for (int m = 0; m < 3;
+		 * m++) { for (int n = 0; n < 3; n++) { panelHolder[m][n] = new
+		 * JPanel(); this.add(panelHolder[m][n]);
+		 * panelHolder[m][n].setOpaque(false); } }
+		 */
+
+		JPanel panelHolder1 = new JPanel();
+		panelHolder1.setOpaque(false);
+		JPanel panelHolder2 = new JPanel();
+		panelHolder2.setOpaque(false);
+		// setting constrains for panelholder1
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.anchor = GridBagConstraints.CENTER;
+		c.gridx = 0;
+		c.gridy = 0;
+
+		this.add(panelHolder1, c);
+		// setting constrains for panelholder2
+		c.fill = GridBagConstraints.VERTICAL;
+		c.gridx = 0;
+		c.gridy = 1;
+		this.add(panelHolder2, c);
+		final ImageIcon welcomeImage = createImageIcon("/images/voronoi6.gif", "Voronoi gif for welcome panel");
+
+		JLabel informationLabel1 = new JLabel(welcomeImage);
+		gui.setContentPane(informationLabel1);
+
+		final ImageIcon guideImage = createImageIcon("/images/guide3.png", "user guide button");
+
+		// creating user guide and listener
+		UserGuide guideLabel = new UserGuide(guideImage, gui);
+		// creating choose size label and combo box
+		JLabel chooseSize = new JLabel("Font size: ");
+		panelHolder1.setLayout(new BorderLayout());
+		panelHolder1.add(guideLabel, BorderLayout.CENTER);
+
+		panelHolder1.setPreferredSize(new Dimension(300, 300));
+		// Panel for start and exit buttons
+		JPanel welcomeButtons = new JPanel();
+		JPanel welcomeControls = new JPanel();
+		JPanel languagePanel = new JPanel();
+
+		languagePanel.setOpaque(false);
+		welcomeControls.setOpaque(false);
+		welcomeButtons.setOpaque(false);
+
+		languagePanel.setLayout(new GridLayout(1, 2));
+		welcomeControls.setLayout(new GridLayout(4, 1));
+		welcomeButtons.setLayout(new GridLayout(1, 3));
+
+		JButton start = new JButton("Start");
+		start.setBackground(new Color(255, 255, 230));
+		start.setToolTipText("Click to enter the software.");
+		start.setSize(100, 100);
+		start.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				gui.setSize(800, 900);
+
+				switch (language.getLanguage()) {
+				case "english":
+					canvasPanel = new CanvasPanel(gui, "en", sizeControl.getSelectedIndex(), language.getSelectedIndex());
+					break;
+				case "spanish":
+					canvasPanel = new CanvasPanel(gui, "es", sizeControl.getSelectedIndex(), language.getSelectedIndex());
+					break;
+				case "chinese":
+					canvasPanel = new CanvasPanel(gui, "ch", sizeControl.getSelectedIndex(), language.getSelectedIndex());
+					break;
+				}
+
+				gui.setContentPane(canvasPanel);
+				gui.invalidate();
+				gui.validate();
+			}
+		});
+		start.setPreferredSize(new Dimension(100, 35));
+
+		JButton exit = new JButton("Exit");
+		exit.setBackground(new Color(255, 255, 230));
+		exit.setToolTipText("Click to leave the software.");
+		exit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+
+			}
+		});
+		exit.setPreferredSize(new Dimension(60, 35));
+
+		JButton free = new JButton("Play by yourself!");
+		free.setBackground(new Color(255, 255, 230));
+		free.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				gui.setVisible(false);
+				switch (language.getSelectedIndex()) {
+				case 0:
+					languageCode = "en";
+					break;
+				case 1:
+					languageCode = "es";
+					break;
+				case 2:
+					languageCode = "ch";
+					break;
+				default:
+					languageCode = "en";
+				}
+				manual = new ManualFrame(gui, languageCode, 800, 600, sizeControl.getSelectedIndex());
+				manual.create((int) gui.getScreenX() / 2 - manual.getSize().width / 2, (int) gui.getScreenY() / 2 - manual.getSize().height / 2);
+				// manual.setVisible(true);
+			}
+
+		});
+
+		JLabel label3 = new JLabel("Language:");
+
+		welcomeButtons.add(start);
+		welcomeButtons.add(exit);
+		languagePanel.add(label3);
+
+		language.setWelcome(start, exit, label3, chooseSize, guideLabel, sizeControl, free);
+		sizeControl.registerComponent(start);
+		sizeControl.registerComponent(exit);
+		sizeControl.registerComponent(canvasPanel);
+		sizeControl.registerComponent(label3);
+		sizeControl.registerComponent(language);
+		sizeControl.registerComponent(chooseSize);
+		sizeControl.registerComponent(guideLabel.dialog.content);
+		sizeControl.registerComponent(free);
+
+		sizeControl.registerComponent(free);
+		languagePanel.add(language);
+		welcomeControls.add(free);
+		welcomeControls.add(welcomeButtons);
+
+		JPanel textSize = new JPanel(new GridLayout(1, 2));
+		textSize.add(chooseSize);
+		textSize.add(sizeControl);
+		textSize.setOpaque(false);
+
+		welcomeControls.add(textSize);
+		welcomeControls.add(languagePanel);
+		panelHolder2.add(welcomeControls);
+		gui.setLayout(new GridLayout(1, 1));
+
+		gui.getContentPane().add(this);
+
+	}
+
+	public CanvasPanel getCanvasPanel() {
+		canvasPanel = new CanvasPanel(gui, "en", this.sizeControl.getSelectedIndex(), language.getSelectedIndex());
+		return (CanvasPanel) canvasPanel;
+	}
+
+	/**
+	 * Creates an image icon from the specified path giving it the specified
+	 * description Source:
+	 * http://docs.oracle.com/javase/tutorial/uiswing/components/icon.html
+	 * 
+	 * @param path
+	 *            Image path
+	 * @param description
+	 *            Image description
+	 * @return Image icon made from the image
+	 */
+	protected ImageIcon createImageIcon(String path, String description) {
+		java.net.URL imgURL = getClass().getResource(path);
+		if (imgURL != null) {
+			return new ImageIcon(imgURL, description);
+		} else {
+			System.err.println("Couldn't find file: " + path);
+			return null;
+		}
+	}
+}

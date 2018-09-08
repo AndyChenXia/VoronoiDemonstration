@@ -1,0 +1,37 @@
+package gui;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import controller.CanvasController;
+
+/**
+ * Created by misha on 15/02/16.
+ */
+public class CanvasKeyListener implements KeyListener {
+
+	private static final Logger log = LoggerFactory.getLogger(CanvasKeyListener.class);
+
+	private final CanvasController controller;
+
+	public CanvasKeyListener(CanvasController _controller) {
+		this.controller = _controller;
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		log.info("Key pressed");
+		this.controller.nextVoronoiStep();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+	}
+}

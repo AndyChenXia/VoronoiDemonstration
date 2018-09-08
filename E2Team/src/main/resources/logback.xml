@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger.%method - %msg%n</pattern>-->
+            <pattern>[%thread] %-5level %logger.%method - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!--
+    Example of how to set individual logging levels:
+    <logger name="prototype.Canvas" level="DEBUG" />
+    -->
+</configuration>

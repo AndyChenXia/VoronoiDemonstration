@@ -1,0 +1,46 @@
+package gui;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class UserGuideDialog extends JDialog {
+
+	private static final long serialVersionUID = 1L;
+	private final File instructionText;
+	private JScrollPane scroll;
+	public JTextArea content;
+	private BufferedReader in;
+
+	public UserGuideDialog() throws IOException {
+		this.instructionText = new File("instructions");
+		in = new BufferedReader(new FileReader(this.instructionText));
+		content = new JTextArea();
+		content.setEditable(false);
+		content.setLineWrap(true);
+		content.setWrapStyleWord(true);
+
+		this.getText();
+		scroll = new JScrollPane(content);
+		this.add(scroll);
+
+	}
+
+	public void getText() throws IOException {
+		String line;
+		line = in.readLine();
+		while (line != null) {
+			content.append(line + "\n");
+			line = in.readLine();
+		}
+	}
+
+	public JTextArea getContentText() {
+		return content;
+	}
+}

@@ -1,0 +1,62 @@
+package gui;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+
+/**
+ * Overall GUI for the team project E2
+ * 
+ * @author Michael
+ *
+ */
+public class MainGUI extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private WelcomePanel welcomePanel;
+	private Dimension screenSize;
+	private int fontSize;
+
+	public MainGUI(boolean visible, int size, int language) {
+
+		super("Voronoi Visualisation");
+		fontSize = size;
+		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); // nimbus theme
+			//UIManager.getLookAndFeelDefaults().put("Button.background",new Color(255,255,240));
+			UIManager.getLookAndFeelDefaults().put("Panel.background",new Color(255,255,250));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		setSize(800, 600);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		// Put frame in the center
+		this.setLocation((int) screenSize.getWidth() / 2 - this.getSize().width / 2,
+				(int) screenSize.getHeight() / 2 - this.getSize().height / 2);
+		this.setResizable(false);
+		welcomePanel = new WelcomePanel(this, fontSize, language);
+		setVisible(visible);
+	}
+
+	public static void main(String[] args) {
+		new MainGUI(true, 0, 0);
+	}
+
+	public WelcomePanel getWelcomePanel() {
+		return welcomePanel;
+	}
+
+	public double getScreenX() {
+		return screenSize.getWidth();
+	}
+
+	public double getScreenY() {
+		return screenSize.getHeight();
+	}
+
+}

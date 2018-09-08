@@ -1,0 +1,84 @@
+{
+	"firstPoint": {
+		"ADD_POINT_START": {
+			"en": "The First point is added to the canvas. As this is the only point, all locations on the canvas are closest to this point. Therefore the polygon for this point takes up the whole of the canvas.",
+			"es": "Primer punto añadido al panel,como es el unico punto, todas las localizaciones del panel son las mas cercanas a este. Por eso el panel entero es el voronoide de este punto.",
+			"ch": "第一个点加到了板面，因为这是第一个点也是唯一的点,板面的所有位置都是离这个点最近。所以整个板面都是这个点的泰森多边形。"
+		}
+	},
+	"secondPoint": {
+		"ADD_POINT_START": {
+			"en": "The next point is added, all the other points have been greyed out.",
+			"es": "El siguiente punto es añadido, el resto de los puntos se vuelven grises",
+			"ch": "下一个点添加到了板面，剩下的点变灰。"
+		},
+		"GETTING_BISECTION": {
+			"en": "We find the perpendicular bisector of our new point and our old point. If you drew a line, x between the two points, the perpendicular bisector would be the line which cuts x exactly in half, and is at a right angle to x. This line is special because any point on the perpendicular bisector is the same distance from the first point as it is from the second.",
+			"es": "Calculamos el bisector entre el nuevo y viejo punto.Si dibujamos una linea x entre 2 puntos, el bisector pasa justo por el medio de x con angulo perpendicular a esta,esta linea es especial porque cualquier punto de esta linea tiene la misma distancia al primer punto de la linea x como al segundo punto de la linea x",
+			"ch": "我们计算新点跟旧点之间的二等分线。如果我们在这两点之间画一条线x，二等分线会从x的正中间划过并与x形成90度，这条线特殊在x的第一个点到这条线的一个点和x的第二个点到这条线的一个点，如果是同一个点的话距离是一样的。"
+		},
+		"TRIMMING_BEFORE": {
+			"en": "Now we need to reduce the size of the old polygon to accomodate for the new point",
+			"es": "Ahora necesitamos reducir el tamaño del viejo poligono para añadir el nuevo punto",
+			"ch": "为了新添加的点，现在我们需要将老的多边形缩小。"
+		},
+		"TRIMMING_AFTER": {
+			"en": "This can be done using the perpendicular bisector we found earlier. All we have to is find out where the perpendicular bisector cuts through the old polygon. Anything on the same side of the bisector as the new point is no longer in the old polygon. This area is shown in white, and will be the area of the new polygon.",
+			"es": "Este paso es realizado con el bisector perpendicular que se ha hallado antes. Lo que tenemos que hacer es encontrar donde el bisector perpendicular corta con el viejo polygono. Todo lo que este con el mismo lado del bisector como el nuevo punto no pertenecera mas al viejo polygono, Esta area es demostrado en blanco y sera el area del nuevo polygono.",
+			"ch": "现在这个步骤在使用之前计算出的垂直二等分线。所要做的是用计算出的垂直二等分线计算出和老的多边形的交叉点，所有在垂直二等分线和新的点的一边将不属于老的多边形的一部分，这一部分会变成白色而且是新的多边形的面积"
+		},
+		"DONE_WITHOUT_BORDER": {
+			"en": "Next we add the edge we found using perpendicular bisection to the new polygon, so we can keep a track of which sides make up the polygon.",
+			"es": "Siguiente paso añadimos el nuevo lado hallado utilizando el bisector perpendicular al nuevo poligono, de esta manera mantenemos un seguimiento de los lados que forman el poligono.",
+			"ch": "下一步我们把用垂直二等分线找出的新边加到新的多边形，这样我们能够了解新的多边形是由哪一些边组成的。"
+		},
+		"JOINING_WITH_BORDER": {
+			"en": "Finally we add any remaining edges to the new polygon. These edges have been highlighted in orange.",
+			"es": "Finalmente añadimos el resto de los lados al poligono. Estos lados son destacados con color naranja.",
+			"ch": "最后我们将剩下的边添加到新的多边形，这些边会用橙色标出来"
+		},
+		"DONE": {
+			"en": "We're done with our new polygon, so we've filled it in.",
+			"es": "Hemos creado un nuevo poligono, por eso lo rellenamos con un color.",
+			"ch": "新的多边形完成了，所以把它用颜色填满"
+		}
+	} ,
+	"newPoint": {
+		"ADD_POINT_START": {
+			"en": "We add a new point to our diagram, this point is shown in black. Next we'll go through all the surrounding points and find the new edges to make a polygon for this point",
+			"es": "Añadimos un nuevo punto, este punto es representado en negro. Siguiente iremos por los puntos que estan alrededor y encontrar los nuevos lados que forman este poligono.",
+			"ch": "我们添加新的黑点,接着我们将游历周边的点来计算出新的多边形的边"
+		},
+		"GETTING_BISECTION": {
+			"en": "We find the perpendicular bisector between our new point and our old point. If you drew a line, x, between the new point and the old point, the perpendicular bisector would be the line which cuts x in half, and forms a right angle with x. The perpendicular bisector is important because any location on the perpendicular bisector is equal distance from both the new point and the old point. We only look at the part of the perpendicular bisector in the old polygon, because where the bisector meets the edges of the old polygon will form an edge for our new polygon",
+			"es": "Calculamos el bisector entre el nuevo y viejo punto.Si dibujamos una linea x entre 2 puntos, el bisector pasa justo por el medio de x con angulo perpendicular a esta,esta linea es especial porque cualquier punto de esta linea tiene la misma distancia al primer punto de la linea x como al segundo punto de la linea x. Solo tenemos encuenta la parte en el que el bisector perpendicular corta con el biejo poligono, porque donde el bisector corte con el viejo poligono formara el lado del nuevo poligono.",
+			"ch": "我们计算新点跟旧点之间的二等分线。如果我们在这两点之间画一条线x，二等分线会从x的正中间划过并与x形成90度，这条线特殊在x的第一个点到这条线的一个点和x的第二个点到这条线的一个点，如果是同一个点的话距离是一样的。我们只在意 垂直二等分线和旧的多边形的交叉，因为这个交叉所形成的边会是我们新的多边形的边。"
+		},
+		"TRIMMING_BEFORE": {
+			"en": "Now we look at the old polygon (which has been highlighted) and cut it down to size to make room for the new polygon",
+			"es": "Ahora ponemos la antencion en el viejo poligono (el poligono que ha sido destacado) y reducir su area para hacer sitio al nuevo poligono.",
+			"ch": "现在我们回到旧的多边形（表示出来的多边形）将它的面积缩小，这样新的多边形才有位置。"
+		},
+		"TRIMMING_AFTER": {
+			"en": "We cut it down, the space for the new polygon is now shown in white, and we can add the perpendicular bisector as an edge to the new polygon.",
+			"es": "Reducimos, y el espacio para el nuevo poligono es representado en blanco, y podemos añadir el bisector perpendicular como un lado del nuevo polgono.",
+			"ch": "缩小，新的多边形的位置由白色标示出来现在我们可以吧垂直二等分线添加到新的多边形。"
+		},
+		"DONE_WITHOUT_BORDER": {
+			"en": "We've now added all the edges to our new polygon that border with any old polygons, these have been highlighted",
+			"es": "Ahora hemos añadido todos los lados al nuevo poligono que forman lados con los biejos poligonos, estos son destacados.",
+			"ch": "现在所有的边都添加完毕，这些边把多边形分隔开来（表示出来的边）。"
+		},
+		"JOINING_WITH_BORDER": {
+			"en": "Next we add any missing edges to the polygon, these are the ones that meet the edge of the canvas. This gives us a full polygon",
+			"es": "Ahora añadimos el resto de los lados de los poligonos, estos son los que intersectan con los lados del panel y resulta en un poligono completo.",
+			"ch": "现在我们把剩下的边添加到多边形，剩下来的是和板面的边交叉的边。这样我们就有一个完整的多边形了。"
+		},
+		"DONE": {
+			"en": "We're done with our polygon, so we fill it in ready to move on the the next new point",
+			"es": "Hemos terminado con nuestro poligono, por eso lo rellenamos y estamos preparados para añadir un nuevo punto.",
+			"ch": "我们完成了多边形，所以我们将它填满也为添加下一个点做好了准备。"
+			
+		}
+	}
+}

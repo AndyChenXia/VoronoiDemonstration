@@ -1,0 +1,10 @@
+Informacion sobre distribucion de puntos: 
+
+Aleatorio:
+Este modo pones los puntos de forma aleatorio por lo que termina generando voronoides con figuras aleatorias.
+
+Cuadrado:
+Este modo pones los puntos de una manera en el que los voronoides generados tendran formas cuadradas.
+
+Hex: 
+Este modo pones los puntos de una maneara en el que los voronoides generados tendran formas hexagonales.
