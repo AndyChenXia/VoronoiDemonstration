@@ -2,7 +2,7 @@
 software demonstrating the calculation for voronoids
 
 Authors:
-        Michael Chaharbaghi
+        Michael Chaharbaghi\n
         Andy Chen
         Sam Durdy
         Thomas Huw Harris
