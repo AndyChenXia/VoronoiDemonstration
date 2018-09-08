@@ -1,5 +1,7 @@
 # VoronoidDemonstration
-software demonstrating the calculation for voronoids
+software demonstrating the calculation for voronoids.
+
+report availble for reading (E2report)
 
 Authors:
         Michael Chaharbaghi,
